@@ -1,0 +1,96 @@
+--creating new project with dotnet cli --
+
+dotnet new sln
+
+creating web api
+
+dotnet new webapi -n API
+
+dotnet new classlib -n Application
+
+dotnet new classlib -n Domain
+
+dotnet new classlib -n Persistence
+
+--ADDING these projects withing the solution file
+
+dotnet sln add API/API.csproj
+
+dotnet sln add application
+
+dotnet sln add persistence
+
+dotnet sln add domain
+
+-----adding project references
+
+➜  api dotnet add reference ../Application 
+
+➜  Application dotNET add reference ../Persistence
+
+➜  Application dotNET add reference ../Domain     
+
+➜  socialActivities cd Persistence 
+
+➜  Persistence dotnet add reference ../Domain 
+
+----------------------------------------------
+
+gernerate .vscode package
+
+and then goto prefrerence settings search exclude and then add **/bin **/obj 
+
+went api project > properties and> launchSetting.json > within API  json he modified lanchURL to false and removed application url of https
+
+appsettings.dev.json file  ->  Microsoft -> warning was changed to information for getting more details.
+----------------------------------------------
+
+for runnnig the application 
+
+dotnet run command must be given 
+
+or 
+
+dotnet watch run which is being used here.
+----------------------------------------------
+import json file from studentAssests folder into postMan canary
+
+
+-----------------------
+
+11:
+
+dotnet tool list --global  --if nothing then install the below nuget package library
+
+
+ dotnet tool install --global dotnet-ef --version 5.0.7 
+
+for creating database:
+
+ran this command : 
+dotnet ef migrations add InitialCreate -p Persistence -s API
+got this error:
+Your startup project 'API' doesn't reference Microsoft.EntityFrameworkCore.Design. This package is required for the Entity Framework Core Tools to work. Ensure your startup project is correct, install the package, and try again.
+open nuget
+install it in  api project
+
+-------------------
+15
+adding code to sc
+
+git init
+
+dotnet new -l    -- listing all files
+
+dotnet new gitignore
+
+we skipped appsetttings file to be saved on git hub because they will be containing alot of third party api keys.
+
+
+-------------------
+
+
+18.
+creating react project
+
+npx create-react-app client-app --use-npm --template typescript   
