@@ -85,7 +85,13 @@ dotnet new -l    -- listing all files
 dotnet new gitignore
 
 we skipped appsetttings file to be saved on git hub because they will be containing alot of third party api keys.
+added this file in gitignore file
 
+then git add .
+git commit -m
+git branch -M main
+git remote add orgin https://github.com/sandeepsodhi/socialActivities.git
+git push -u origin main
 
 -------------------
 
