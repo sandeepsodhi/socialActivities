@@ -100,3 +100,21 @@ git push -u origin main
 creating react project
 
 npx create-react-app client-app --use-npm --template typescript   
+ 
+
+
+---------
+
+26.
+
+npm install axios
+
+----------
+
+28.
+installing semantic ui
+
+npm install semantic-ui-react semantic-ui-css
+
+-------
+
