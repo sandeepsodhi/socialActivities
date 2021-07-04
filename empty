@@ -95,14 +95,11 @@ git push -u origin main
 
 -------------------
 
-
 18.
 creating react project
 
 npx create-react-app client-app --use-npm --template typescript   
  
-
-
 ---------
 
 26.
@@ -117,4 +114,8 @@ installing semantic ui
 npm install semantic-ui-react semantic-ui-css
 
 -------
+33.
 
+from nuget package manager install below package Mediatr
+
+MediatR.Extensions.Microsoft.DependencyInjection
