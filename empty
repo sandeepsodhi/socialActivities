@@ -119,3 +119,9 @@ npm install semantic-ui-react semantic-ui-css
 from nuget package manager install below package Mediatr
 
 MediatR.Extensions.Microsoft.DependencyInjection
+---------
+
+38.
+
+Auto Mapper -> in nuget gallary install aytimapper.Extensions.DependencyInjection by jimmy bogard
+
