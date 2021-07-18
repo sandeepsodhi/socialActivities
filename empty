@@ -127,7 +127,12 @@ Auto Mapper -> in nuget gallary install aytimapper.Extensions.DependencyInjectio
 
 -------------
 
-45.
+57.
 
+npm install uuid
+
+if uuid package did not exist the try this command from suggestions
+
+npm i --save-dev @types/uuid
 
 
