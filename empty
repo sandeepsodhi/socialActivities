@@ -136,3 +136,7 @@ if uuid package did not exist the try this command from suggestions
 npm i --save-dev @types/uuid
 
 
+---------------
+
+61. setting up axios
+
