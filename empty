@@ -137,3 +137,12 @@ npm i --save-dev @types/uuid
 
 
 ---------------
+
+69. Setting up mobx 
+
+installation: 
+
+npm install mobx mobx-react-lite
+
+--------------------------
+
