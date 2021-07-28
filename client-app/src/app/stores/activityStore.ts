@@ -18,6 +18,16 @@ export default class ActivityStore {
         return Array.from(this.activityRegistry.values()).sort((a,b) => Date.parse(a.date) - Date.parse(b.date));
     }
 
+    get groupedActivities() {
+        return Object.entries(
+            this.activitiesByDate.reduce((activities, activity) => {
+                const date = activity.date;
+                activities[date] = activities[date] ? [...activities[date], activity] : [activity];
+                return activities;
+            }, {} as {[key: string]:Activity[]})
+        )
+    }
+
     loadActivities = async () => {
         this.loadingInitial = true;
         try {
@@ -31,6 +41,7 @@ export default class ActivityStore {
             console.log(error);
         }
     }
+
     loadActivity = async (id:string) => {
         let activity = this.getActivity(id);
         if(activity){
@@ -52,10 +63,12 @@ export default class ActivityStore {
             }
         }
     }
+
     private setActivity = (activity: Activity) => {
         activity.date = activity.date.split('T')[0];
         this.activityRegistry.set(activity.id, activity);
     }
+    
     private getActivity = (id:string) => {
         return this.activityRegistry.get(id);
     }
@@ -63,6 +76,7 @@ export default class ActivityStore {
     setLoadingInitial = (state:boolean) => {
         this.loadingInitial = state;
     }
+
     createActivity = async (activity: Activity) => {
         this.loading = true;
         try {
