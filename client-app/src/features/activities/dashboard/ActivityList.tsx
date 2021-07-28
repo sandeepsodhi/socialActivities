@@ -14,14 +14,10 @@ export default observer(function ActivityList() {
                 <Fragment key={group}>
                     <Header sub color='teal'>
                         {group}
-                        <Segment>
-                            <Item.Group divided>
-                                {activities.map(activity => (
-                                    <ActivityListItem key={activity.id} activity={activity} />
-                                ))}
-                            </Item.Group>
-                        </Segment>
                     </Header>
+                    {activities.map(activity => (
+                        <ActivityListItem key={activity.id} activity={activity} />
+                    ))}
                 </Fragment>
             ))}
         </>
