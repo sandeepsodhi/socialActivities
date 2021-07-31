@@ -168,7 +168,11 @@ import 'react-calendar/dist/Calendar.css';
 
 FluentValidation.AspNetCore -v 10.3.0
 
+--------------
 
+108
+
+npm install react-toastify
 
 
 
