@@ -237,3 +237,9 @@ installed following package from nuget into API project:
 
 Microsoft.AspNetCore.Authentication.JwtBearer by Micros
 
+-------
+
+137.
+read how data is being stored in user secrets in .net Core
+
+
