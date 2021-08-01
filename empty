@@ -184,3 +184,14 @@ resetting database
 
 dotnet ef database drop -s  API -p Persistence
 
+-------
+
+116 
+
+installing formik
+
+npm install formik
+
+
+
+
