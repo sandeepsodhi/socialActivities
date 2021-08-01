@@ -216,3 +216,11 @@ npm install @types/react-datepicker --save-dev
 npm ls date-fns  -- to check installed date
 
 npm install date-fns@2.23.0   -- install the version of date.
+
+-----
+
+128. install this identity package in domain project
+
+Microsoft.AspNetCore.Identity.EntityFramework
+
+
