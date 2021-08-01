@@ -231,6 +231,9 @@ Microsoft.AspNetCore.Identity.EntityFramework
 dotnet ef migrations add identityAdded -p Persistence -s API
 
 ----
+135.
 
+installed following package from nuget into API project:
 
+Microsoft.AspNetCore.Authentication.JwtBearer by Micros
 
