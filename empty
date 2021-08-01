@@ -224,3 +224,13 @@ npm install date-fns@2.23.0   -- install the version of date.
 Microsoft.AspNetCore.Identity.EntityFramework
 
 
+-----
+
+129.
+
+dotnet ef migrations add identityAdded -p Persistence -s API
+
+----
+
+
+
