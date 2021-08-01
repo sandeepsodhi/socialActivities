@@ -193,5 +193,11 @@ installing formik
 npm install formik
 
 
+----
 
+118 
+
+npm install yup 
+
+npm install @types/yup --save-dev
 
