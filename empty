@@ -243,3 +243,12 @@ Microsoft.AspNetCore.Authentication.JwtBearer by Micros
 read how data is being stored in user secrets in .net Core
 
 
+------
+
+
+when using store always use observers
+
+-------
+
+
+
