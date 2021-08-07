@@ -255,12 +255,31 @@ git reset --hard HEAD~3  (3 denotes number of commits you want to remove)
 
 git push origin head --force
 
+-------------
 
 157.
 
 dotnet ef migrations add ActivityAttendee -p Persistence -s API
 
+--------
 
-x
+158 adding infrastructure project
+
+>dotnet new classlib -n Infrastructure
+
+>cd infrastructure
+
+>dotnet add reference ../Application
+
+>cd ..
+
+> cd API 
+
+> dotnet add reference ../Infrastructure
+
+>dotnet restore
+
+
+
 
 
