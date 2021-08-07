@@ -250,5 +250,17 @@ when using store always use observers
 
 -------
 
+deleting commits
+git reset --hard HEAD~3  (3 denotes number of commits you want to remove)
+
+git push origin head --force
+
+
+157.
+
+dotnet ef migrations add ActivityAttendee -p Persistence -s API
+
+
+x
 
 
