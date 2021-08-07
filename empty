@@ -280,6 +280,11 @@ dotnet ef migrations add ActivityAttendee -p Persistence -s API
 >dotnet restore
 
 
+--------------
+
+
+
+
 
 
 
