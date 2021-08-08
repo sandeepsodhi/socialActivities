@@ -287,6 +287,14 @@ dotnet ef migrations add ActivityAttendee -p Persistence -s API
 > main folder
 >dotnet ef migrations add AddCancelledProperty -p Persistence -s API
 
+--------
+
+167,
+
+drop database 
+
+dotnet ef database drop -p persistence -s API
+
 
 
 
