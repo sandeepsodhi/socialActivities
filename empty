@@ -301,6 +301,12 @@ dotnet ef database drop -p persistence -s API
 
 then installed nuget packate cloudinaryDotnet by cloudinary
 
+--------
+
+182. 
+
+cd .. 
+dotnet ef migrations add PhotoEntityAdded -p Persistence -s API
 
 
 
