@@ -295,6 +295,13 @@ drop database
 
 dotnet ef database drop -p persistence -s API
 
+----------
+
+179. create account on cloudinary
+
+then installed nuget packate cloudinaryDotnet by cloudinary
+
+
 
 
 

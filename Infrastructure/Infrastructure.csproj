@@ -13,4 +13,7 @@
   <ItemGroup>
     <Folder Include="Security\" />
   </ItemGroup>
+  <ItemGroup>
+    <PackageReference Include="CloudinaryDotNet" Version="1.15.2" />
+  </ItemGroup>
 </Project>
