@@ -13,19 +13,21 @@ export default observer(function ProfilePage() {
     const { profileStore } = useStore();
     const { loadingProfile, loadProfile, profile } = profileStore;
 
-    useEffect(()=> {
+    useEffect(() => {
         loadProfile(username);
     }, [loadProfile, username])
 
-    if(loadingProfile) return <LoadingComponent content='Loading profile...' />
+    if (loadingProfile) return <LoadingComponent content='Loading profile...' />
 
     return (
         <Grid>
             <Grid.Column width={16}>
                 {profile &&
-                    <ProfileHeader profile={profile}/>
+                    <>
+                        <ProfileHeader profile={profile} />
+                        <ProfileContent profile={profile} />
+                    </>
                 }
-                <ProfileContent />
             </Grid.Column>
         </Grid>
     );
