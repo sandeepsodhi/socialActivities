@@ -2,6 +2,7 @@ import axios, { AxiosError, AxiosResponse } from 'axios';
 import { toast } from 'react-toastify';
 import { history } from '../..';
 import { Activity, ActivityFormValues } from '../models/activity';
+import { Profile } from '../models/profile';
 import { User, UserFormValues } from '../models/user';
 import { store } from '../stores/store';
 
@@ -14,7 +15,7 @@ axios.defaults.baseURL = 'http://localhost:5000/api';
 
 axios.interceptors.request.use(config => {
     const token = store.commonStore.token;
-    if(token) config.headers.Authorization = `Bearer ${token}`
+    if (token) config.headers.Authorization = `Bearer ${token}`
     return config;
 })
 
@@ -25,16 +26,16 @@ axios.interceptors.response.use(async response => {
     const { data, status, config } = error.response!;
     switch (status) {
         case 400:
-            if(typeof data === 'string'){
+            if (typeof data === 'string') {
                 toast.error(data);
             }
-            if(config.method === 'get' && data.errors.hasOwnProperty('id')){
+            if (config.method === 'get' && data.errors.hasOwnProperty('id')) {
                 history.push('/not-found');
             }
-           if(data.errors){
+            if (data.errors) {
                 const modalStateErrors = [];
-                for(const key in data.errors){
-                    if(data.errors[key]){
+                for (const key in data.errors) {
+                    if (data.errors[key]) {
                         modalStateErrors.push(data.errors[key]);
                     }
                 }
@@ -74,14 +75,19 @@ const Activities = {
 }
 
 const Account = {
-     current: () => requests.get<User>('/account'),
-     login: (user: UserFormValues) => requests.post<User>('/account/login', user),
-     register: (user: UserFormValues) => requests.post<User>('/account/register', user)
+    current: () => requests.get<User>('/account'),
+    login: (user: UserFormValues) => requests.post<User>('/account/login', user),
+    register: (user: UserFormValues) => requests.post<User>('/account/register', user)
+}
+
+const Profiles = {
+    get: (username: string) => requests.get<Profile>(`/profiles/${username}`)
 }
 
 const agent = {
-    Activities, 
-    Account
+    Activities,
+    Account,
+    Profiles
 }
 
 export default agent;
