@@ -43,7 +43,8 @@ namespace Application.Profiles
                 user.Bio = request.Bio ?? user.Bio;
                 user.DisplayName = request.DisplayName ?? user.DisplayName;
 
-                _context.Entry(user).State = EntityState.Modified;
+                //this line will allow you save even if you try submit wihout any change
+                //_context.Entry(user).State = EntityState.Modified;
 
                 var success = await _context.SaveChangesAsync() > 0;
 
