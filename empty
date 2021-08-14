@@ -319,3 +319,9 @@ installing react -drop zone
 npm install --save react-dropzone
 
 
+-----
+
+201 
+
+npm install --save react-cropper
+
