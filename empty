@@ -310,9 +310,12 @@ dotnet ef migrations add PhotoEntityAdded -p Persistence -s API
 
 
 
+----
 
+200
 
+installing react -drop zone
 
-
+npm install --save react-dropzone
 
 
