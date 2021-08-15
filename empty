@@ -332,3 +332,8 @@ npm install --save react-cropper
 cd .. 
 dotnet ef migrations add CommentEntityAdded -p Persistence -s API
 
+-----
+
+cd cleint-app
+
+npm install @microsoft/signalr
