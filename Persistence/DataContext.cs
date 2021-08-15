@@ -32,7 +32,7 @@ namespace Persistence
                    
             builder.Entity<Comment>()
                 .HasOne(a => a.Activity)
-                .WithMany(c => c.Comment)
+                .WithMany(c => c.Comments)
                 .OnDelete(DeleteBehavior.Cascade);
         }
     }
