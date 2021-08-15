@@ -325,3 +325,10 @@ npm install --save react-dropzone
 
 npm install --save react-cropper
 
+-----
+
+209.
+
+cd .. 
+dotnet ef migrations add CommentEntityAdded -p Persistence -s API
+
