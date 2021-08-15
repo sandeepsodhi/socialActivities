@@ -22,4 +22,10 @@
     </ProjectReference>
   </ItemGroup>
 
+  <ItemGroup>
+    <None Remove="SignalR\" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="SignalR\" />
+  </ItemGroup>
 </Project>
