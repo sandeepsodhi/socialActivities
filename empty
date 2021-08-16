@@ -337,3 +337,11 @@ dotnet ef migrations add CommentEntityAdded -p Persistence -s API
 cd cleint-app
 
 npm install @microsoft/signalr
+
+------
+
+222
+
+cd .. 
+dotnet ef migrations add FollowingEntityAdded -p Persistence -s API
+
