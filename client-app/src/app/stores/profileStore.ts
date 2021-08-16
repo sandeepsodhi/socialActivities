@@ -8,6 +8,7 @@ export default class ProfileStore {
     loadingProfile = false;
     uploading = false;
     loading = false;
+    followings: Profile[] = [];
 
     constructor() {
         makeAutoObservable(this);
@@ -74,33 +75,57 @@ export default class ProfileStore {
         }
     }
 
-    deletePhoto = async(photo: Photo) => {
+    deletePhoto = async (photo: Photo) => {
         this.loading = true;
         try {
             await agent.Profiles.deletePhoto(photo.id);
             runInAction(() => {
-                if(this.profile){
+                if (this.profile) {
                     this.profile.photos = this.profile.photos?.filter(p => p.id !== photo.id);
                     this.loading = false;
                 }
             })
-        }catch(error){
+        } catch (error) {
             runInAction(() => this.loading = false);
             console.log(error);
         }
     }
 
-    updateProfile = async(profile: Partial<Profile>) => {
+    updateProfile = async (profile: Partial<Profile>) => {
         this.loading = true;
         try {
             await agent.Profiles.updateProfile(profile);
             runInAction(() => {
-                if(profile.displayName && profile.displayName !== store.userStore.user?.displayName){
+                if (profile.displayName && profile.displayName !== store.userStore.user?.displayName) {
                     store.userStore.setDisplayName(profile.displayName);
                 }
-                this.profile = {...this.profile, ...profile as Profile};
+                this.profile = { ...this.profile, ...profile as Profile };
                 this.loading = false;
-            })            
+            })
+        } catch (error) {
+            console.log(error);
+            runInAction(() => this.loading = false);
+        }
+    }
+    updateFollowing = async (username: string, following: boolean) => {
+        this.loading = true;
+        try {
+            await agent.Profiles.updateFollowing(username);
+            store.activityStore.updateAttendeeFollowing(username);
+            runInAction(() => {
+                if (this.profile && this.profile.username !== store.userStore.user?.username) {
+                    following ? this.profile.followersCount++ : this.profile.followersCount--;
+                    this.profile.following = !this.profile.following;
+                }
+                this.followings.forEach(profile => {
+                    if (profile.username === username) {
+                        this.profile?.following ? this.profile.followersCount-- : profile.followersCount++;
+                        profile.following = !profile.following;
+                    }
+                })
+                this.loading = false;
+            })
+
         } catch (error) {
             console.log(error);
             runInAction(() => this.loading = false);
