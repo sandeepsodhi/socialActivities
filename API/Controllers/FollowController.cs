@@ -11,5 +11,11 @@ namespace API.Controllers
         {
             return HandleResult(await Mediator.Send(new FollowToggle.Command { TargetUserName = username }));
         }
+
+        [HttpGet("{username}")]
+        public async Task<IActionResult> GetFollwings(string username, string predicate)
+        {
+            return HandleResult(await Mediator.Send(new List.Query { Username = username, Predicate = predicate }));
+        }
     }
 }
