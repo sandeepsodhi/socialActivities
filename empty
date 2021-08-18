@@ -345,3 +345,17 @@ npm install @microsoft/signalr
 cd .. 
 dotnet ef migrations add FollowingEntityAdded -p Persistence -s API
 
+--------
+
+242.
+
+cd cleint-app
+
+npm install react-infinite-scroller
+
+if donesnt work 
+--legacy-peer-deps
+
+we need to install types for this also.
+
+npm install @types/react-infinite-scroller
