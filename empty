@@ -359,3 +359,6 @@ if donesnt work
 we need to install types for this also.
 
 npm install @types/react-infinite-scroller
+
+-------------------------
+
