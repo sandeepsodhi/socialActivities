@@ -1,4 +1,4 @@
-import { observer } from 'mobx-react-lite';
+import { observer } from "mobx-react-lite"
 import React from 'react';
 import { useEffect } from 'react';
 import { useParams } from 'react-router-dom';
@@ -10,7 +10,9 @@ import ActivityDetailedHeader from './ActivityDetailedHeader';
 import ActivityDetailedInfo from './ActivityDetailedInfo';
 import ActivityDetailedSidebar from './ActivityDetailedSidebar';
 
+
 export default observer(function ActivityDetail() {
+
     const { activityStore } = useStore();
     const { selectedActivity: activity, loadActivity, loadingInitial, clearSelectedActivity } = activityStore
     const { id } = useParams<{ id: string }>();

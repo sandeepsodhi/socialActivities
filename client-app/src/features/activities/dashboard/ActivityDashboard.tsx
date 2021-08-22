@@ -8,7 +8,6 @@ import ActivityFilters from './ActivityFilters';
 import ActivityList from './ActivityList';
 import ActivityListItemPlaceholder from './ActivityListItemPlaceholder';
 
-
 export default observer(function ActivityDashboard() {
 
     const { activityStore } = useStore();

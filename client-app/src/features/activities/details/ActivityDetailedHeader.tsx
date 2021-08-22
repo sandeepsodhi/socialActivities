@@ -26,29 +26,29 @@ interface Props {
 export default observer(function ActivityDetailedHeader({ activity }: Props) {
     const { activityStore: { updateAttendance, loading, cancelActivityToggle } } = useStore();
     return (
-        <Segment.Group>
+         <Segment.Group>
             <Segment basic attached='top' style={{ padding: '0' }}>
                 {activity.isCancelled &&
                     <Label style={{ position: 'absolute', zIndex: 1000, left: -14, top: 20 }} ribbon color='red' content='Cancelled' />
                 }
                 <Image src={`/assets/categoryImages/${activity.category}.jpg`} fluid style={activityImageStyle} />
                 <Segment style={activityImageTextStyle} basic>
-                    <Item.Group>
-                        <Item>
+                        {/* <Item.Group> */} 
+                         <Item>
                             <Item.Content>
                                 <Header
                                     size='huge'
                                     content={activity.title}
                                     style={{ color: 'white' }}
-                                />
-                                <p>{format(activity.date!, 'dd MMM yyyy')}</p>
+                                /> 
+                                 <p>{format(activity.date!, 'dd MMM yyyy')}</p>
                                 <p>
                                     Hosted by <strong><Link to={`/profiles/${activity.host?.username}`}>{activity.host?.displayName}</Link></strong>
-                                </p>
+                                </p> 
                             </Item.Content>
                         </Item>
-                    </Item.Group>
-                </Segment>
+                    {/* </Item.Group>  */}
+                </Segment> 
             </Segment>
             <Segment clearing attached='bottom'>
                 {activity.isHost ? (
@@ -73,7 +73,7 @@ export default observer(function ActivityDetailedHeader({ activity }: Props) {
                 ) : (
                     <Button disabled={activity.isCancelled} loading={loading} onClick={updateAttendance} color='teal'>Join Activity</Button>
                 )}
-            </Segment>
+            </Segment>  
         </Segment.Group>
     )
 })

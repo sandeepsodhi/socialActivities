@@ -13,14 +13,14 @@ export default observer(function ProfileHeader({profile} : Props) {
         <Segment>
             <Grid>
                 <Grid.Column width = {12}>
-                    <Item.Group>
+                    {/* <Item.Group divided> */}
                         <Item>
                             <Item.Image avatar size='small' src= {profile.image || '/assets/user.png'} />
                             <Item.Content verticalAlign='middle'>
                                 <Header as='h1' content={profile.displayName} />
                             </Item.Content>
                         </Item>
-                    </Item.Group>
+                    {/* </Item.Group> */}
                 </Grid.Column>
                 <Grid.Column width={4}>
                     <Statistic.Group widths={2}>

@@ -362,3 +362,8 @@ npm install @types/react-infinite-scroller
 
 -------------------------
 
+254.
+
+Create production version of application
+npm run build
+
