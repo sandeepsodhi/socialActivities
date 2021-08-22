@@ -393,3 +393,7 @@ dotnet ef migrations add PGInitial -p Persistence -s API
 If you get warning for old version >  
 
 Install post gresql extension
+
+258 watch video for setting up heroku
+
+ 
