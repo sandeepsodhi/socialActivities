@@ -367,3 +367,29 @@ npm install @types/react-infinite-scroller
 Create production version of application
 npm run build
 
+----
+
+255. <Item.Group> has issue in the production mode.
+
+---
+256
+
+docker run --name dev -e POSTGRES_USER=admin -e POSTGRES_PASSWORD=secret -p 5432:5432 -d postgres:latest
+
+--
+
+257 
+
+install 
+
+Npgsql.EntityFrameworkCore.PostgreSQL by Sh
+
+deleted all migrations for sqllite
+
+cd ..
+
+dotnet ef migrations add PGInitial -p Persistence -s API
+
+If you get warning for old version >  
+
+Install post gresql extension

@@ -26,7 +26,7 @@ export default observer(function ProfileAbout() {
                 </Grid.Column>
                 <Grid.Column width='16' >
                     {editMode ? 
-                    <ProfileEditForm setEditMode={setEditMode} /> : <span style={{ whiteSpace: 'pre-wrap' }}></span>}
+                    <ProfileEditForm setEditMode={setEditMode} /> : <span style={{ whiteSpace: 'pre-wrap' }}>{profile?.bio}</span>}
                 </Grid.Column>
             </Grid>
         </Tab.Pane>
