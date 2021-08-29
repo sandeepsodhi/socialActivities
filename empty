@@ -397,3 +397,15 @@ Install post gresql extension
 258 watch video for setting up heroku
 
  
+
+
+ -----
+
+260 security tightning
+
+add nuget package for API project:
+
+NWebsec.AspNetCore.Middleware
+
+
+
