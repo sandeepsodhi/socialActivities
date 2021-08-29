@@ -396,9 +396,6 @@ Install post gresql extension
 
 258 watch video for setting up heroku
 
- 
-
-
  -----
 
 260 security tightning
@@ -406,6 +403,26 @@ Install post gresql extension
 add nuget package for API project:
 
 NWebsec.AspNetCore.Middleware
+
+--------------------------------
+
+barbara_vsdjdop_test@tfbnw.net	
+will_eaprmnz_test@tfbnw.net
+
+
+266.
+
+adding facebook js sdk
+
+npm install @types/facebook-js-sdk --save-dev
+
+
+
+
+ 
+
+
+
 
 
 
