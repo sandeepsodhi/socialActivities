@@ -60,12 +60,27 @@ namespace API
             //app.UseCspReportOnly(opt => opt
             app.UseCsp(opt => opt
                .BlockAllMixedContent()
-               .StyleSources(s => s.Self().CustomSources("https://fonts.googleapis.com"))
-               .FontSources(s => s.Self().CustomSources("https://fonts.gstatic.com", "data:"))
+               .StyleSources(s => s.Self().CustomSources(
+                   "https://fonts.googleapis.com",
+                   "sha256-oFySg82XYSNiSd+Q3yfYPD/rxY6RMDMJ0KxzGG74iGM="
+                   ))
+               .FontSources(s => s.Self().CustomSources(
+                    "https://fonts.gstatic.com",
+                    "data:"
+                    ))
                .FormActions(s => s.Self())
                .FrameAncestors(s => s.Self())
-               .ImageSources(s => s.Self().CustomSources("https://res.cloudinary.com"))
-               .ScriptSources(s => s.Self().CustomSources("sha256-f9+ZQdWdVlJSMIIKOYpzkJBLj5R4gy1aPzDN7MtriBg="))            
+               .ImageSources(s => s.Self().CustomSources(
+                   "https://res.cloudinary.com",
+                   "https://www.facebook.com",
+                   "data:"
+                   ))
+               .ScriptSources(s => s.Self().CustomSources(
+                   "sha256-f9+ZQdWdVlJSMIIKOYpzkJBLj5R4gy1aPzDN7MtriBg=",
+                   "sha256-SAdJXm41pS1xp1UBNHu3NlqmzGp4fjJKnao0SNqClpU=",
+                   "sha256-ULaMHjVJgdE8lo/aPmE56GG/g0nZdlNEHJMJCR53Lmo=",
+                    "https://connect.facebook.net"
+                   ))            
             );
 
             if (env.IsDevelopment())
@@ -77,7 +92,7 @@ namespace API
             else
             {
                 //app.UseHsts(); // doesn't work in heroku
-                app.Use(async (context, next) => 
+                app.Use(async (context, next) =>
                 {
                     context.Response.Headers.Add("Strict-Transport-Security", "max-age=31536000");
                     await next.Invoke();
@@ -94,7 +109,7 @@ namespace API
 
             app.UseAuthentication();
 
-            app.UseAuthorization(); 
+            app.UseAuthorization();
 
             app.UseEndpoints(endpoints =>
             {

@@ -416,7 +416,9 @@ adding facebook js sdk
 
 npm install @types/facebook-js-sdk --save-dev
 
+270
 
+npm install rimraf --save-dev
 
 
  
