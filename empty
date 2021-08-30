@@ -421,7 +421,15 @@ npm install @types/facebook-js-sdk --save-dev
 npm install rimraf --save-dev
 
 
- 
+------
+
+272.
+
+git checkout -b RefreshTokens
+
+cd .. 
+
+dotnet ef migrations add RefreshTokens -p Persistence -s API
 
 
 
