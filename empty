@@ -431,10 +431,12 @@ cd ..
 
 dotnet ef migrations add RefreshTokens -p Persistence -s API
 
+-----
 
+280 Setting up SendGrid
 
-278.
+install nuget package
 
-
+for send grid in infrastructure proj
 
 
